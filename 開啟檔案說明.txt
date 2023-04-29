@@ -1,0 +1,3 @@
+1、安裝XAMPP並保持開啟
+2、將此資料夾放入"C:\xampp\htdocs\
+3、瀏覽器輸入http://127.0.0.1/forStylesheet/index.html

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>處理試算表文字</title>
+</head>
+<body>
+  <div class="warning ifInputEmpty d-none"></div>
+  <table>
+  <thead>
+    <tr>
+      <th>金額</th>
+      <th>稅額</th>
+      <th>金額備註</th>
+      <th>稅額備註</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <!-- renderTd() -->
+    
+  </tbody>
+</table>
+  <div class="usernameInput">
+  <label for="usernameInput">輸入申請人名稱：</label>
+    <input type="text" class="username" id="usernameInput" >
+    <!-- <input type="text" class="username" id="usernameInput" value="Miyako"> -->
+  </div>
+  <div class="firstProjectName">
+  <label for="firstProjectName">輸入第一個案名：</label>
+  <input type="text" class="username" id="firstProjectName">
+  <!-- <input type="text" class="username" id="firstProjectName" value="第一個案名"> -->
+  </div>
+  <div class="warning">
+    <ol>
+      <li>全部帶有"/"的項目請刪除，謝謝</li>
+      <li>全選excel並貼上到記事本</li>
+      <li>將全形空白全數以半形空白取代</li>
+      <li>輸入所有資料並點擊提交</li>
+      <li>excel欄位需與最下方圖片相同</li>
+    </ol>  
+  </div>
+  <!-- <div class="lastProjectName">
+    <label for="lastProjectName">輸入最後一個案名：</label>
+    <input type="text" class="username" id="lastProjectName">
+  </div> -->
+  <div class="content">
+    <label for="content">記事本文字：</label><br>
+    <textarea type="text" name="" id="content" class="textBox" cols="40" rows="5"></textarea>
+  </div>
+  <input type="button" value="提交" onclick="onClick()" class="btn btn-primary">
+</body>
+<br>
+<img src="./excel_example.png" alt="">
+<br>
+<img src="./useNote.png" alt="">
+<!-- <div>
+<table style="background-color: thistle;">
+<tr>
+  <textarea>
+實式木造有限公司								
+			M.H. Timber Design & Engineering Co., Ltd.			112 年 3 月份零用金請款單		
+"項
+次"	案名	日期	項目說明	 收入金額 	支出金額		 餘額 	 備註 
+					 收據              	 發票 		
+1			公司當月預支零用金	 20,000 			 20,000 	
+2	福安居	3/17	Amarok加油			 1,931 	 18,069 	
+3	虎糖	3/10	小霸王加油			 1,443 	 16,626 	
+4	虎糖	3/23	膠帶19*12捲			 228 	 16,398 	
+5	黃文	3/7	郵寄發票回公司		 28 		 16,370 	
+6	水上廠房	3/2	HINO米其林輪胎4條195.75.R16			 13,860 	 2,510 	
+7	瑞助尚武段	2/12	2"水泥螺絲200支			 252 	 2,258 	
+8	瑞助尚武段	2/13	1.2"不鏽鋼自攻螺絲1K支			 525 	 1,733 	
+9	瑞助尚武段	3/3	Amarok加油			 2,130 	-397 	
+10	瑞助尚武段	3/4	"2.5""不鏽鋼自攻螺絲3K支
+3""不鏽鋼自攻螺絲1K支"			 7,187 	-7,584 	
+11	瑞助尚武段	3/8	Amarok加油			 2,005 	-9,589 	
+12	瑞助尚武段	3/21	小霸王加油			 1,520 	-11,109 	
+13	瑞助尚武段	3/21	板模角鐵200片			 508 	-11,617 	
+14	瑞助尚武段	3/23	停車費			 30 	-11,647 	
+15	瑞助尚武段	3/24	板模角鐵200片			 508 	-12,155 	
+16	瑞助尚武段	3/24	板模角鐵200片			 508 	-12,663 	
+17	三幼	3/15	星形板手組			 110 	-12,773 	
+18	三幼	3/15	Amarok加油			 2,192 	-14,965 	
+19							-14,965 	
+20							-14,965 	
+21							-14,965 	
+22							-14,965 	
+23							-14,965 	
+24							-14,965 	
+25							-14,965 	
+小　　計				 20,000 	 28 	 34,937 	-14,965 	
+申請人：			會計：			 核准： 		
+
+
+        </textarea>
+      </tr>
+    </table>
+  </div> -->
+</html>
+<style>
+  table,tr,td{
+    border: 1px solid tomato;
+    padding: 3px;
+  }
+  html{
+    padding: 10px;
+  }
+  td{
+    max-width:300px;
+  }
+  .warning {
+  width:350px;
+  background: #ffc4c6;
+  color: #a20606;
+  padding: 10px;
+  text-align: center;
+}
+ol>li,.warning{
+  text-align: left;
+}
+img{
+  max-width: 350px;
+}
+</style>
+<script src="jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <script src="js/jquery.dataTables.min.js"></script> -->
+<script src="handleIndex.js"></script>
