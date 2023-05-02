@@ -8,15 +8,15 @@ document.querySelector('.btn-primary').addEventListener('click',function(){
   var isEmpty=false;
   document.querySelector('.ifInputEmpty').classList.add('d-none');
   if(document.querySelector('#usernameInput').value==''){
-    innerHTML+='未輸入申請人名稱<br>'
+    innerHTML+='<label for="usernameInput">未輸入申請人名稱(點擊前往)</label><br>'
     isEmpty=true;
   }
   if(document.querySelector('#firstProjectName').value==''){
-    innerHTML+='未輸入第一個案名<br>'
+    innerHTML+='<label for="firstProjectName">未輸入第一個案名(點擊前往)</label><br>'
     isEmpty=true;
   }
   if(document.querySelector('#content').value==''){
-    innerHTML+='未貼上記事本內容<br>'
+    innerHTML+='<label for="content">未輸入記事本文字(點擊前往)</label><br>'
     isEmpty=true;
   }
   if(isEmpty){
