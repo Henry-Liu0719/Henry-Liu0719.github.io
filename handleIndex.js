@@ -167,10 +167,10 @@ function generateResult(array,username,month){
         }
       }else if(array[i].includes('-')){
         var money_full=`${array[i][1]}`;
-        console.log(money_full);
-        var str_full=`${username}_${month}月份零用金_${firstProjectName}_${array[i][0]}`
-        var money_five=``;
-        var str_five=`${username}_5%_${firstProjectName}_${array[i][0]}`
+        // console.log(money_full);
+        var str_full=`${username}_${month}月份零用金_${array[i-1][6]}_${array[i][0]}`
+        var money_five=`無`;
+        var str_five=`${username}_5%_${array[i-1][6]}_${array[i][0]}`
       }else{
         var money_full=`${array[i][2]}`;
         var str_full=`${username}_${month}月份零用金_${array[i-1][6]}_${array[i][0]}`
