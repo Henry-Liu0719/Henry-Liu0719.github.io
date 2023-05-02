@@ -28,7 +28,6 @@ document.querySelector('.btn-primary').addEventListener('click',function(){
 function onClick(){
   let username = document.querySelector('#usernameInput').value;
   username = username.trim();
-  //console.log(username);
   let str = document.querySelector('textarea').value;
   let segments=[];
   str = str.replace('"', '\"');
@@ -51,15 +50,11 @@ function onClick(){
 //   console.log(str[i] + " 的 ASCII 編碼是：" + asciiCode);
 // }
 
-//   console.log(asciiCode);
-  // console.log(str);
-  // console.log(str[10]);
   // str = deleteHeaderRow(str);
   // str = encodeURIComponent(str);
   str=deleteChars(str,',');
   var month = getMonth(str);
-  console.log(month)
-  // //console.log(month);
+  // console.log(month)
   while(str=cutByDate(str)){
     segments.push(getSegment(str));
   }
@@ -71,10 +66,7 @@ function onClick(){
   console.log(words);
   var results=[];
   results=generateResult(words,username,month);
-  console.log(results[0]);
-  // //console.log(results.length-1);
-  // //console.log(words[words.length-2]);
-  // //console.log(words[words.length-1]);
+  // console.log(results[0]);
   document.querySelector('tbody').innerHTML=renderTd(results);
 }
 // function onClick(){
@@ -85,14 +77,6 @@ function onClick(){
 //   str=deleteChars(str,',');
 //   var month = getMonth(str);
 //   cutByNum(str);
-//   // //console.log(month);
-//   // while(str=cutByDate(str)){
-//   //   segments.push(getSegment(str));
-//   // }
-//   // str=cutByDate(str);
-  
-//   // //console.log(segments);
-//   // document.querySelector('tr>td').innerHTML+=str;
 // }
 function deleteChars(str,charToRemove){
   const regex = new RegExp(charToRemove, "g"); 
@@ -167,13 +151,27 @@ function generateResult(array,username,month){
     var items=[];
     var results=[];
     for(let i=0;i<array.length;i++){
+      console.log(array[i].includes('-'))
       if(i==0){
-        var money_full=`${array[i][2]}`;
+        if(array[i].includes('-')){
+
+          var money_full=`${array[i][1]}`;
+          var str_full=`${username}_${month}月份零用金_${firstProjectName}_${array[i][0]}`
+          var money_five=``;
+          var str_five=`${username}_5%_${firstProjectName}_${array[i][0]}`
+        }else{
+          var money_full=`${array[i][2]}`;
+          var str_full=`${username}_${month}月份零用金_${firstProjectName}_${array[i][0]}`
+          var money_five=`${array[i][3]}`;
+          var str_five=`${username}_5%_${firstProjectName}_${array[i][0]}`
+        }
+      }else if(array[i].includes('-')){
+        var money_full=`${array[i][1]}`;
+        console.log(money_full);
         var str_full=`${username}_${month}月份零用金_${firstProjectName}_${array[i][0]}`
-        var money_five=`${array[i][3]}`;
+        var money_five=``;
         var str_five=`${username}_5%_${firstProjectName}_${array[i][0]}`
-      }
-      else{
+      }else{
         var money_full=`${array[i][2]}`;
         var str_full=`${username}_${month}月份零用金_${array[i-1][6]}_${array[i][0]}`
         var money_five=`${array[i][3]}`;
