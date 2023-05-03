@@ -1,0 +1,39 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 0px;
+  padding-left: 0px;
+  gap:10px;
+}
+
+table,tr,td,thead>tr>th{
+    border: 1px solid tomato;
+    padding: 3px;
+  }
+  html{
+    padding: 10px;
+  }
+  td{
+    max-width:300px;
+  }
+  .warning {
+  width:350px;
+  background: #ffc4c6;
+  color: #a20606;
+  padding: 10px;
+  text-align: center;
+}
+ol>li,.warning{
+  text-align: left;
+}
+img{
+  max-width: 350px;
+}
+span{
+  background-color: #253d62;
+  /* opacity: 0.8; */
+  color: white;
+}
+label{
+  margin: 5px;
+}
