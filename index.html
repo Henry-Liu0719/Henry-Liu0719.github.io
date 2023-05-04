@@ -12,6 +12,7 @@
   <table>
   <thead>
     <tr>
+      <th>案名</th>
       <th>金額</th>
       <th>稅額</th>
       <th>金額備註</th>
@@ -41,10 +42,10 @@
       <li>項目說明請刪除"空白"</li>
       <li>收據或發票只能其中一項有輸入金額<br>
         另一格保持空白</li>
-      <li>記得開啟隱藏欄位：稅額、金額</li>
+      <li>記得開啟隱藏欄位：銷售額、稅額</li>
+      <li>若費用為收據，銷售額及稅額應為"-"</li>
       <li>全選excel並貼上到記事本</li>
       <li>將全形空白全數以半形空白取代</li>
-      <li><h1>只要取代一次就好，不用砍到只剩一個</h1></li>
       <li>貼上所有資料並點擊提交</li>
     </ol>  
   </div>
@@ -54,8 +55,7 @@
   </div> -->
   <div class="content">
     <label for="content">記事本文字：</label><br>
-    <textarea type="text" name="" id="content" class="textBox" cols="40" rows="5">
-    </textarea>
+    <textarea type="text" name="" id="content" class="textBox" cols="42" rows="5"></textarea>
   </div>
   <input type="button" value="提交" onclick="onClick()" class="btn btn-primary">
   </div>
@@ -105,7 +105,7 @@
 申請人：   會計：    核准：   簽核：    
       </textarea>
       <br>
-      <span>更新時間：112/5/3 09:00</span>
+      <span>更新時間：112/5/4 08:00</span>
     </div>
 </div>
 

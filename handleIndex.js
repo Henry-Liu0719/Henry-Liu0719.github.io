@@ -75,7 +75,8 @@ function cutByItemNum(str){
 var startIndex = str.search('\n');
 if(startIndex==-1)
   return false;
-str = str.substring(startIndex);
+  str = str.substring(startIndex+1);
+  // str = str.substring(startIndex);會卡在文字尾段的\n無限迴圈
 startIndex = str.search(' ');
 return str = str.substring(startIndex);
 }
@@ -83,18 +84,17 @@ function deleteHeaderRow(str){
   var startIndex = str.search('稅額');
   return str.substring(startIndex);
 }
-function cutByNum(str){
-  let i=1;
-  while(str.search(` ${i} `)!=-1){
-    if(str.search(` ${i} -`))
-      continue;
-      var startIndex = str.search(` ${i} `);
-    if(str.search(` ${i+1} -`))
-      var startIndex = str.search(` ${i} `);
+// function cutByNum(str){
+//   let i=1;
+//   while(str.search(` ${i} `)!=-1){
+//     if(str.search(` ${i} -`))
+//       continue;
+//       var startIndex = str.search(` ${i} `);
+//     if(str.search(` ${i+1} -`))
+//       var startIndex = str.search(` ${i} `);
     
-  }
-
-}
+//   }
+// }
 function getSegment(str){
   var endIndex = str.search('\n');
   var segment = endIndex==-1?str.substring(0):str.substring(0,endIndex);
@@ -138,29 +138,28 @@ function generateResult(array,username,month){
         var money_full=`${array[i][3]}`;
         // console.log(money_full);
         var str_full=`${username}_${month}月份零用金_${array[i][0]}_${array[i][2]}`
-        var money_five=`無`;
-        var str_five=`${username}_5%_${array[i][0]}_${array[i][2]}`
+        var money_five=``;
+        var str_five=``
+        var projectName=`${array[i][0]}`;
         // 申請人名稱_X月份零用金_案名_項目說明	
         // 申請人名稱_5%_案名_項目說明
-
       }else{
         var money_full=`${array[i][4]}`;
         var str_full=`${username}_${month}月份零用金_${array[i][0]}_${array[i][2]}`
         var money_five=`${array[i][5]}`;
         var str_five=`${username}_5%_${array[i][0]}_${array[i][2]}`
+        var projectName=`${array[i][0]}`;
       }
       items.push(money_full);
       items.push(str_full);
       items.push(money_five);
       items.push(str_five);
+      items.push(projectName);
       // results.push(items);
       results[i]=items;
     }
     //console.log(results[0]);
     return results;
-}
-function sortArray(array){
-
 }
 function renderTd(array){
   // console.log(array);
@@ -168,6 +167,7 @@ function renderTd(array){
   for(let i =0;i<array.length;i++){
     innerHTML+=`
         <tr>
+          <td>${array[i][4]}</td>
           <td>${array[i][0]}</td>
           <td>${array[i][2]}</td>
           <td>${array[i][1]}</td>

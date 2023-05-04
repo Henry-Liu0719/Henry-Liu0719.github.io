@@ -5,9 +5,8 @@
   padding-left: 0px;
   gap:10px;
 }
-
 table,tr,td,thead>tr>th{
-    border: 1px solid tomato;
+  border: 1px solid tomato;
     padding: 3px;
   }
   html{
@@ -22,6 +21,7 @@ table,tr,td,thead>tr>th{
   color: #a20606;
   padding: 10px;
   text-align: center;
+  border-radius: 10%;
 }
 ol>li,.warning{
   text-align: left;
@@ -37,3 +37,9 @@ span{
 label{
   margin: 5px;
 }
+  input#usernameInput {
+      width: 205px;
+  }
+  th{
+    min-width: 68px;
+  }
