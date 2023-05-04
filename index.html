@@ -9,6 +9,10 @@
 </head>
 <body>
   <div class="warning ifInputEmpty d-none"></div>
+
+  <div>
+    總數：<span class="sum"></span>
+  </div>
   <table>
   <thead>
     <tr>
@@ -19,7 +23,7 @@
       <th>稅額備註</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="items">
 
       <!-- renderTd() -->
     
@@ -32,6 +36,7 @@
     <input type="text" class="username" id="usernameInput" >
     <!-- <input type="text" class="username" id="usernameInput" value="Miyako"> -->
   </div>
+
   <!-- <div class="firstProjectName">
   <label for="firstProjectName">輸入第一個案名：</label>
   <input type="text" class="username" id="firstProjectName">
@@ -55,22 +60,25 @@
   </div> -->
   <div class="content">
     <label for="content">記事本文字：</label><br>
-    <textarea type="text" name="" id="content" class="textBox" cols="42" rows="5"></textarea>
+    <textarea type="text" name="" id="content" class="textBox" cols="42" rows="5" ></textarea>
   </div>
-  <input type="button" value="提交" onclick="onClick()" class="btn btn-primary">
+  <div class="btns">
+    <input type="button" value="提交" onclick="submitResults()" class="btn btn-primary submitResults">
+    <input type="button" value="清空" onclick="emptyResults()" class="btn btn-danger emptyResults">
+  </div>
   </div>
   <div class="ruleArea">
-<span>零用金格式參考圖</span>
+<span class="tip">零用金格式參考圖</span>
 <br>
 <img src="./excel_example.png" alt="">
 <br>
-<span>記事本使用ctrl+H尋找及取代</span>
+<span class="tip">記事本使用ctrl+H尋找及取代</span>
 <br>
 <img src="./useNote.png" alt="">
 <br>
-<span>可copy下頭全部文字做測試</span>
+<span class="tip">可copy下頭全部文字做測試</span>
 <br>
-<textarea cols="50" rows="6">
+<textarea cols="50" rows="6" class="testTextarea">
 實式木造有限公司          
    M.H. Timber Design & Engineering Co., Ltd.   112 年  4  月份零用金請款單    
 "項
@@ -118,3 +126,6 @@
 <!-- <script src="js/jquery.dataTables.min.js"></script> -->
 <script src="handleIndex.js"></script>
 <!-- <script src="handleIndex copy.js"></script> -->
+  <!-- <script>
+    document.querySelector("#content").value=document.querySelector(".testTextarea").value;
+  </script> -->

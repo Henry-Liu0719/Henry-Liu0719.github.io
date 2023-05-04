@@ -24,12 +24,11 @@ function pageBehaviors(){
     if(isEmpty){
       document.querySelector('.ifInputEmpty').classList.remove('d-none');
       document.querySelector('.ifInputEmpty').innerHTML=innerHTML;
-      
     }
   })
 }
 pageBehaviors();
-function onClick(){
+function submitResults(){
   let username = document.querySelector('#usernameInput').value;
   username = username.trim();
   let str = document.querySelector('textarea#content').value;
@@ -50,14 +49,17 @@ function onClick(){
     }
   });
   sortWords(words);
-  console.log("words");
-  console.log(words);
+  // console.log("words");
+  // console.log(words);
   var results=[];
   results=generateResult(words,username,month);
-  // console.log(results[0]);
   // results=sortArray(results);
-  // console.log(results);
-  document.querySelector('tbody').innerHTML=renderTd(results);
+  console.log(results);
+  document.querySelector('tbody.items').innerHTML=renderTd(results);
+  document.querySelector('.sum').innerHTML+=countSum(results);
+}
+function emptyResults(){
+      document.querySelector("#content").value="";
 }
 function deleteChars(str,charToRemove){
   const regex = new RegExp(charToRemove, "g"); 
@@ -177,6 +179,20 @@ function renderTd(array){
   }
   return innerHTML;
 }
+function countSum(array){
+  return array.length;
+}
+// function isSameItemExist(){
+
+// }
+// function mergeSameItems(array){
+//   for (let i = 0; i < array.length-1; i++) {
+//     if(array[i][1]==array[i+1][1]){
+//       array[i][]
+//     }
+//   }
+
+// }
 
 // 5387 林信全_3月份零用金_瑞助_加油
 // 268 林信全_5%_瑞助_加油

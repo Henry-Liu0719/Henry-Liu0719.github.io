@@ -29,7 +29,7 @@ ol>li,.warning{
 img{
   max-width: 350px;
 }
-span{
+span.tip{
   background-color: #253d62;
   /* opacity: 0.8; */
   color: white;
@@ -37,9 +37,15 @@ span{
 label{
   margin: 5px;
 }
-  input#usernameInput {
-      width: 205px;
-  }
-  th{
-    min-width: 68px;
-  }
+input#usernameInput {
+    width: 205px;
+}
+th{
+  min-width: 68px;
+}
+.emptyResults{
+  text-align: end;
+}
+.submitResults{
+  text-align: start;
+}
