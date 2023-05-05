@@ -182,18 +182,22 @@ function renderTd(array){
 function countSum(array){
   return array.length;
 }
-// function isSameItemExist(){
 
-// }
-// function mergeSameItems(array){
-//   for (let i = 0; i < array.length-1; i++) {
-//     if(array[i][1]==array[i+1][1]){
-//       array[i][]
-//     }
-//   }
-
-// }
-
+function isSameItemExist(array){//判斷項目名稱是否相同，返回索引值
+  for(let i=0;i<array.length-1;i++){
+    if(array[i][1]==array[i+1][1]){
+      return i;
+    }
+  }
+  return -1;
+}
+function mergeSameItems(array){//要分類收據或發票
+  array[i][0]=sumProfit(array[i][0],array[i+1][0]);
+  array[i][2]=sumTax(array[i][2],array[i+1][2]);
+  return array=array.split(i+1);
+}
+function sumProfit(){}
+function sumTax(){}
 // 5387 林信全_3月份零用金_瑞助_加油
 // 268 林信全_5%_瑞助_加油
 /*

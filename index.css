@@ -43,9 +43,23 @@ input#usernameInput {
 th{
   min-width: 68px;
 }
-.emptyResults{
-  text-align: end;
+.btns {
+  display: flex;
+  justify-content: space-between;
 }
-.submitResults{
-  text-align: start;
+
+.btn {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.btn:hover {
+  opacity: 0.8;
 }
