@@ -1,0 +1,41 @@
+[33mcommit 5d77cdd36f2ff7825af54e2c2aa706231f06eec8[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Henry-Liu0719 <hungminliu@gmail.com>
+Date:   Wed May 3 15:24:37 2023 +0800
+
+    加上醒目的警語
+
+[33mcommit 7578381444ff2d82a2cdd6cbf6f30c9f752019c6[m
+Author: Henry-Liu0719 <hungminliu@gmail.com>
+Date:   Wed May 3 09:08:54 2023 +0800
+
+    更改words陣列產生的方法，改'\n'切割，產製表格將依照案名排列
+
+[33mcommit 9a02af92da10a1ffef762956983766323bd0c3ca[m
+Author: Henry-Liu0719 <hungminliu@gmail.com>
+Date:   Tue May 2 17:31:19 2023 +0800
+
+    修正了第一個案名的bug，改成flexbox
+
+[33mcommit 544344fa2b6aa751ab97434a507f1759aabd3feb[m
+Author: Henry-Liu0719 <hungminliu@gmail.com>
+Date:   Tue May 2 15:42:45 2023 +0800
+
+    新增更新日期，警語標籤
+
+[33mcommit b51a6556e6172b43418992b612d649c9636457ed[m
+Author: Henry-Liu0719 <hungminliu@gmail.com>
+Date:   Tue May 2 15:34:21 2023 +0800
+
+    fix receipt value
+
+[33mcommit 09bcad950e882cfd3ac5646cbd47e0e39e35d0f6[m
+Author: Henry-Liu0719 <hungminliu@gmail.com>
+Date:   Sun Apr 30 21:58:55 2023 +0800
+
+    add example
+
+[33mcommit 12b61dbd3a7634f2bf500a9cbf81212b307566e8[m
+Author: Henry-Liu0719 <hungminliu@gmail.com>
+Date:   Sat Apr 29 13:21:43 2023 +0800
+
+    'ver1'

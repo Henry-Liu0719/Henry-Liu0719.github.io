@@ -1,3 +1,19 @@
+/*
+// 假設使用者在 excel 選取了 'sn0001'、'sn0002'、'sn0003' 三個欄位
+// 分析一下我們要的每一筆資料是由 "連續的英文或數字" 所組成
+// 把這個規則寫成正規表達式
+const regex = /[A-Za-z0-9]+/
+
+// 在複製文字的時候會發現，除了流水號之外，分隔、換行符號也一起被複製了進來
+// 用 replace 去 trim 掉不需要的字元在處理上比較麻煩
+// 改使用 match 一次取出所有資料，並轉成陣列供後續使用
+const copiedData = `
+					sn001,
+				    sn002,
+				    sn003
+				  `
+copiedData.match(/[A-Za-z0-9]+/g) // ["sn001", "sn002", "sn003"]
+*/
 // onClick();
 function pageBehaviors(){
   document.querySelector('.btn-primary').addEventListener('click',function(){
@@ -182,6 +198,7 @@ function renderTd(array){
 function countSum(array){
   return array.length;
 }
+
 
 function isSameItemExist(array){//判斷項目名稱是否相同，返回索引值
   for(let i=0;i<array.length-1;i++){
